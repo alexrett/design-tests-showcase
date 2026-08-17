@@ -128,22 +128,14 @@ function buildAnimeProject() {
   console.log("copied codex-anime final field version");
 }
 
-function buildDocumentationProject() {
-  const source = join(experimentsRoot, "kimi-design");
+function buildOpenDesignProject() {
   const destination = join(outputRoot, "projects", "kimi-design");
   copyFile(
-    join(root, "src", "kimi-design.template.html"),
+    join(root, "src", "kimi-design.html"),
     join(destination, "index.html"),
   );
 
-  for (const entry of ["README.md", "AGENTS.md", "components.json", "docs", "design"]) {
-    const from = join(source, entry);
-    if (existsSync(from)) {
-      cpSync(from, join(destination, "files", entry), { recursive: true });
-    }
-  }
-
-  console.log("built kimi-design documentation page");
+  console.log("copied kimi-design Open Design artifact");
 }
 
 rmSync(outputRoot, { recursive: true, force: true });
@@ -165,6 +157,6 @@ for (const slug of astroProjects) {
 }
 
 buildAnimeProject();
-buildDocumentationProject();
+buildOpenDesignProject();
 
 console.log(`showcase ready at ${outputRoot}`);

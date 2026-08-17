@@ -49,14 +49,17 @@ export const projects = [
     kind: "runtime",
   },
   {
-    title: "Kimi · design handoff",
+    title: "Open Design · auth concept",
     slug: "kimi-design",
     folder: "kimi-design",
-    description: "Только дизайн-контекст, без реализации.",
-    kind: "documentation",
+    description: "Интерактивный макет экрана входа, собранный в Open Design.",
+    kind: "runtime",
   },
 ];
 
 export const astroProjects = projects
-  .filter(({ kind, slug }) => kind === "runtime" && slug !== "codex-anime")
+  .filter(
+    ({ kind, slug }) =>
+      kind === "runtime" && !["codex-anime", "kimi-design"].includes(slug),
+  )
   .map(({ slug }) => slug);
