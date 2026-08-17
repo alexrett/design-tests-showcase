@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="ru" data-theme="system"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Вход в «Обучалкинскую слабоду» — учебную платформу с курсами, прогрессом и сообществом."><link rel="icon" type="image/svg+xml" href="/design-tests-showcase/projects/deepseek-detailed/favicon.svg"><link rel="icon" href="/design-tests-showcase/projects/deepseek-detailed/favicon.ico"><title>Вход — Обучалкинская слабода</title><script>
+      (function () {
+        var KEY = "obuchalka-theme";
+        var saved = null;
+        try {
+          saved = window.localStorage.getItem(KEY);
+        } catch (e) {}
+        var theme =
+          saved === "light" || saved === "dark" || saved === "system"
+            ? saved
+            : "system";
+        var dark =
+          theme === "dark" ||
+          (theme === "system" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        var root = document.documentElement;
+        root.dataset.theme = theme;
+        root.classList.toggle("dark", dark);
+        root.style.colorScheme = dark ? "dark" : "light";
+      })();
+    </script><link rel="stylesheet" href="/design-tests-showcase/projects/deepseek-detailed/_astro/layout.U5TtbbzY.css"></head><body><main class="mx-auto max-w-2xl px-6 py-16"><a href="/design-tests-showcase/projects/deepseek-detailed/" class="mb-8 inline-block text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground">← На главную</a><h1 class="text-3xl font-bold tracking-tight">Условия использования</h1><p class="mt-2 text-sm text-muted-foreground">Обновлено: 16 августа 2026 года</p><div class="mt-8 flex flex-col gap-4 text-sm leading-relaxed"><p>Настоящий документ является демонстрационным текстом. «Обучалкинская слабода» — учебная платформа, и эти условия вступят в силу после запуска реального продукта.</p><p>В демо-режиме никакие учётные записи не создаются, данные не отправляются и не хранятся на сервере.</p></div></main></body></html>

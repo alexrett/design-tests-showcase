@@ -1,0 +1,13 @@
+{
+  "name": "design-tests-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun scripts/build.mjs",
+    "test": "bun test",
+    "lint": "bunx biome check .",
+    "check": "bun test && bun run lint && bun run build && bun test",
+    "serve": "bunx serve dist -l 4174"
+  }
+}

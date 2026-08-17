@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Сравнение независимых UI-экспериментов: разные модели, промпты и способы подготовки контекста."
+    />
+    <meta name="theme-color" content="#f7f7f4" />
+    <title>Design Tests — один сценарий, разные агенты</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="./" aria-label="Design Tests, главная">Design Tests</a>
+      <p>Эксперимент · август 2026</p>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <h1 id="page-title">Один сценарий. Разные агенты.</h1>
+        <p>
+          Как модели, постановка задачи и подготовка контекста меняют один и тот же
+          экран входа. Шесть реализаций, один анимационный кейс и один дизайн-handoff.
+        </p>
+      </section>
+
+      <section class="results" aria-labelledby="results-title">
+        <div class="section-heading">
+          <h2 id="results-title">Результаты</h2>
+          <span>8 независимых проектов</span>
+        </div>
+        <div class="project-grid">
+          <a class="project-card" href="./projects/codex-detailed/" target="_blank" rel="noreferrer" aria-label="Codex · detailed. Подробная постановка, UX-контракт и самостоятельная реализация.">
+      <div class="project-preview">
+        <img src="./thumbnails/codex-detailed.jpg" alt="Превью результата Codex · detailed" width="1280" height="800" loading="lazy" />
+      </div>
+      <h3>Codex · detailed</h3>
+      <p class="project-slug">/codex-detailed/</p>
+    </a>
+<a class="project-card" href="./projects/deepseek-clean/" target="_blank" rel="noreferrer" aria-label="DeepSeek · clean. Исходная задача без заранее подготовленного дизайн-контекста.">
+      <div class="project-preview">
+        <img src="./thumbnails/deepseek-clean.jpg" alt="Превью результата DeepSeek · clean" width="1280" height="800" loading="lazy" />
+      </div>
+      <h3>DeepSeek · clean</h3>
+      <p class="project-slug">/deepseek-clean/</p>
+    </a>
+<a class="project-card" href="./projects/deepseek-detailed/" target="_blank" rel="noreferrer" aria-label="DeepSeek · detailed. Расширенная постановка и более строгие требования к результату.">
+      <div class="project-preview">
+        <img src="./thumbnails/deepseek-detailed.jpg" alt="Превью результата DeepSeek · detailed" width="1280" height="800" loading="lazy" />
+      </div>
+      <h3>DeepSeek · detailed</h3>
+      <p class="project-slug">/deepseek-detailed/</p>
+    </a>
+<a class="project-card" href="./projects/deepseek-prepared/" target="_blank" rel="noreferrer" aria-label="DeepSeek · prepared. Подготовленный harness, токены и критерии приёмки.">
+      <div class="project-preview">
+        <img src="./thumbnails/deepseek-prepared.jpg" alt="Превью результата DeepSeek · prepared" width="1280" height="800" loading="lazy" />
+      </div>
+      <h3>DeepSeek · prepared</h3>
+      <p class="project-slug">/deepseek-prepared/</p>
+    </a>
+<a class="project-card" href="./projects/kimi-clean/" target="_blank" rel="noreferrer" aria-label="Kimi · clean. Реализация Kimi из минимального исходного контекста.">
+      <div class="project-preview">
+        <img src="./thumbnails/kimi-clean.jpg" alt="Превью результата Kimi · clean" width="1280" height="800" loading="lazy" />
+      </div>
+      <h3>Kimi · clean</h3>
+      <p class="project-slug">/kimi-clean/</p>
+    </a>
+<a class="project-card" href="./projects/kimi-prepared/" target="_blank" rel="noreferrer" aria-label="Kimi · prepared. Подготовленный контекст и обязательные quality gates.">
+      <div class="project-preview">
+        <img src="./thumbnails/kimi-prepared.jpg" alt="Превью результата Kimi · prepared" width="1280" height="800" loading="lazy" />
+      </div>
+      <h3>Kimi · prepared</h3>
+      <p class="project-slug">/kimi-prepared/</p>
+    </a>
+<a class="project-card" href="./projects/codex-anime/" target="_blank" rel="noreferrer" aria-label="Codex · anime case. Персонаж, видео, cursor gaze и анимированное поле день/ночь.">
+      <div class="project-preview">
+        <img src="./thumbnails/codex-anime.jpg" alt="Превью результата Codex · anime case" width="1280" height="800" loading="lazy" />
+      </div>
+      <h3>Codex · anime case</h3>
+      <p class="project-slug">/codex-anime/</p>
+    </a>
+<a class="project-card project-card--documentation" href="./projects/kimi-design/" aria-label="Kimi · design handoff. Только дизайн-контекст, без реализации.">
+      <div class="project-preview">
+        <div class="document-mark">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M15 5.5h23l11 11V58.5H15z" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M38 5.5v12h11M23 30h18M23 38h18M23 46h12" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <div><strong>Design handoff</strong><span>Документы, токены и критерии приёмки</span></div>
+        </div>
+      </div>
+      <h3>Kimi · design handoff</h3>
+      <p class="project-slug">/kimi-design/</p>
+    </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Каждый результат открывается как самостоятельная статическая страница.</p>
+      <a href="https://github.com/alexrett/design-tests-showcase">Исходники витрины</a>
+    </footer>
+  </body>
+</html>
