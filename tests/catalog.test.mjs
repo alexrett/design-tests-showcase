@@ -21,16 +21,22 @@ describe("project catalog", () => {
     ]);
   });
 
-  test("keeps the documentation-only result honest", () => {
-    const handoff = projects.find(({ slug }) => slug === "kimi-design");
-    expect(handoff?.kind).toBe("documentation");
-    expect(handoff?.description).toContain("без реализации");
+  test("publishes the Open Design auth artifact as a runtime result", () => {
+    const openDesign = projects.find(({ slug }) => slug === "kimi-design");
+    expect(openDesign?.kind).toBe("runtime");
+    expect(openDesign?.title).toContain("Open Design");
+
+    const artifact = resolve(root, "src/kimi-design.html");
+    expect(existsSync(artifact)).toBe(true);
+    expect(readFileSync(artifact, "utf8")).toContain("Вход · Обучалкинская слабода");
+    expect(existsSync(resolve(root, "src/thumbnails/kimi-design.jpg"))).toBe(true);
   });
 
-  test("builds six Astro apps and keeps the anime case static", () => {
+  test("builds six Astro apps and keeps two standalone artifacts static", () => {
     expect(astroProjects).toHaveLength(6);
     expect(astroProjects).not.toContain("codex-anime");
-    expect(projects.filter(({ kind }) => kind === "runtime")).toHaveLength(7);
+    expect(astroProjects).not.toContain("kimi-design");
+    expect(projects.filter(({ kind }) => kind === "runtime")).toHaveLength(8);
   });
 });
 
@@ -39,10 +45,18 @@ describe("assembled site", () => {
     if (!existsSync(resolve(root, "dist/index.html"))) return;
 
     const index = readFileSync(resolve(root, "dist/index.html"), "utf8");
+    expect(index).not.toContain("дизайн-handoff");
+    expect(index.replace(/\s+/g, " ")).toContain(
+      "один интерактивный дизайн-прототип",
+    );
     for (const project of projects) {
       expect(index).toContain(`./projects/${project.slug}/`);
       expect(existsSync(resolve(root, `dist/projects/${project.slug}/index.html`))).toBe(true);
     }
+
+    expect(
+      readFileSync(resolve(root, "dist/projects/kimi-design/index.html"), "utf8"),
+    ).toContain("Вход · Обучалкинская слабода");
   });
 
   test("packages only the selected anime runtime media", () => {
