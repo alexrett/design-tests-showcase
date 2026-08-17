@@ -1972,10 +1972,22 @@
       };
 
       const posterSource = "artifacts/images/mikan-brand-alpha-poster.webp";
+      const useStaticCharacter =
+        navigator.vendor === "Apple Computer, Inc." ||
+        window.matchMedia("(hover: none), (pointer: coarse)").matches;
       stageFallback.src = posterSource;
       video.poster = posterSource;
-      video.src = "artifacts/videos/mikan-brand-alpha.webm";
-      video.load();
+      if (useStaticCharacter) {
+        document.documentElement.dataset.characterMode = "poster";
+        video.hidden = true;
+        video.preload = "none";
+        video.removeAttribute("src");
+        scrubNote.hidden = true;
+      } else {
+        document.documentElement.dataset.characterMode = "video";
+        video.src = "artifacts/videos/mikan-brand-alpha.webm";
+        video.load();
+      }
 
       let mode = "signin";
       let desiredProgress = 0.5;
